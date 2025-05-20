@@ -1,17 +1,13 @@
 package org.example;
 
 public class No {
-    private Integer valor;
+    String valor;
+    public No esquerda, direita;
 
-    public No(Integer valor) {
-        this.valor = valor;
+    public No (String valor) {
+    this.valor = valor;
+    esquerda = direita = null;
     }
 
-    public Integer getValor() {
-        return valor;
-    }
 
-    public void setValor(Integer valor) {
-        this.valor = valor;
-    }
 }
