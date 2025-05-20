@@ -1,7 +1,7 @@
 package org.example;
 
 public class No {
-    String valor;
+    public String valor;
     public No esquerda, direita;
 
     public No (String valor) {
