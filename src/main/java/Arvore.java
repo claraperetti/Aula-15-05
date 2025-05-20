@@ -15,4 +15,12 @@ public class Arvore {
             buscarPreOrdem(node.direita);
         }
     }
+
+    public void buscarEmOrdem (No node){
+        if ((node != null)){
+            System.out.println(node.valor + " ");
+            buscarEmOrdem(node.esquerda);
+            buscarEmOrdem(node.direita);
+        }
+    }
 }
