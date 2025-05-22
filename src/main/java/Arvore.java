@@ -17,10 +17,18 @@ public class Arvore {
     }
 
     public void buscarEmOrdem (No node){
-        if ((node != null)){
+        if (node != null){
             System.out.println(node.valor + " ");
             buscarEmOrdem(node.esquerda);
             buscarEmOrdem(node.direita);
+        }
+    }
+
+    public void buscarPosOrdem (No node) {
+        if (node != null) {
+            buscarPosOrdem(node.esquerda);
+            buscarPosOrdem(node.direita);
+            System.out.println(node.valor + " ");
         }
     }
 }
