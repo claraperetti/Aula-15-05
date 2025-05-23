@@ -1,5 +1,8 @@
 import org.example.No;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Arvore {
     No noRaiz;
 
@@ -29,6 +32,22 @@ public class Arvore {
             buscarPosOrdem(node.esquerda);
             buscarPosOrdem(node.direita);
             System.out.println(node.valor + " ");
+        }
+    }
+
+    public void buscarEmNivel (No node){
+        if (noRaiz ==  null) return;
+
+        Queue<No> fila = new LinkedList<>();
+        fila.add(noRaiz);
+
+        while (!fila.isEmpty()){
+            No atual = fila.poll();
+            System.out.println(atual.valor + " ");
+
+            if (atual.esquerda != null ) fila.add(atual.esquerda);
+            if (atual.direita != null ) fila.add(atual.direita);
+
         }
     }
 }
