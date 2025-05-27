@@ -6,36 +6,36 @@ import java.util.Queue;
 public class Arvore {
     No noRaiz;
 
-    public int contarNos(No node){
+    public int contarNosRecursivo(No node){
         if (node == null ) return 0;
-        return 1 + contarNos (node.esquerda) + contarNos(node.direita);
+        return 1 + contarNosRecursivo(node.esquerda) + contarNosRecursivo(node.direita);
     }
 
-    public void buscarPreOrdem(No node) {
+    public void buscarPreOrdemRecursivo(No node) {
         if ( node != null){
             System.out.println(node.valor + " ");
-            buscarPreOrdem(node.esquerda);
-            buscarPreOrdem(node.direita);
+            buscarPreOrdemRecursivo(node.esquerda);
+            buscarPreOrdemRecursivo(node.direita);
         }
     }
 
-    public void buscarEmOrdem (No node){
+    public void buscarEmOrdemRecursivo(No node){
         if (node != null){
             System.out.println(node.valor + " ");
-            buscarEmOrdem(node.esquerda);
-            buscarEmOrdem(node.direita);
+            buscarEmOrdemRecursivo(node.esquerda);
+            buscarEmOrdemRecursivo(node.direita);
         }
     }
 
-    public void buscarPosOrdem (No node) {
+    public void buscarPosOrdemRecursivo(No node) {
         if (node != null) {
-            buscarPosOrdem(node.esquerda);
-            buscarPosOrdem(node.direita);
+            buscarPosOrdemRecursivo(node.esquerda);
+            buscarPosOrdemRecursivo(node.direita);
             System.out.println(node.valor + " ");
         }
     }
 
-    public void buscarEmNivel (No node){
+    public void buscarEmNivelRecursivo(No node){
         if (noRaiz ==  null) return;
 
         Queue<No> fila = new LinkedList<>();
@@ -50,4 +50,17 @@ public class Arvore {
 
         }
     }
+
+    public int contarNosFolhas(No node){
+        if (node == null) {
+            return 0;
+        }
+
+        if (node.direita == null && node.esquerda == null){
+            return 0;
+        }
+
+        return contarNosFolhas(node.esquerda) + contarNosFolhas(node.direita);
+    }
+
 }
