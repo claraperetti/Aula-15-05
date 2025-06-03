@@ -70,17 +70,17 @@ public class Arvore {
         Queue<No> fila = new LinkedList<>();
         fila.add(noRaiz);
 
-        int contador = 0;
+        int folhas = 0;
 
         while (!fila.isEmpty()) {
             No atual = fila.poll();
-            contador++;
+            folhas++;
 
             if (atual.esquerda != null) fila.add(atual.esquerda);
             if (atual.direita != null) fila.add(atual.direita);
         }
 
-        return contador;
+        return folhas;
     }
 
     public int contarNosComPilha(No raiz){
@@ -89,18 +89,18 @@ public class Arvore {
         Stack<No> pilha = new Stack<>();
         pilha.push(raiz);
 
-        int contador = 0;
+        int folhas = 0;
 
         while (!pilha.isEmpty()){
             No atual = pilha.pop();
-            contador++;
+            folhas++;
 
             if (atual.direita != null) pilha.add(atual.direita);
             if (atual.esquerda != null) pilha.add(atual.esquerda);
 
         }
 
-        return contador;
+        return folhas;
     }
 
 }
