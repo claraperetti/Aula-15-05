@@ -2,15 +2,19 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        ArvoreAVL arvore = new ArvoreAVL();
+        ArvoreRubroNegra arvore = new ArvoreRubroNegra();
 
-        int[] chaves = {10, 20, 30, 40, 50, 25};
-
-        for (int chave : chaves) {
-            arvore.noRaiz = arvore.inserir(arvore.noRaiz, chave);
+        int[] chaves = {10, 20, 30, 15, 5, 25};
+        for (int chave : chaves){
+            arvore.inserir(chave);
         }
 
-        System.out.println("`Percursp em ordem da árvore AVL");
-        arvore.percursoEmOrdem(arvore.noRaiz);
+        arvore.emOrdem();
+
+        arvore.deletar(15);
+        arvore.deletar(10);
+
+        arvore.emOrdem();
     }
+
 }
